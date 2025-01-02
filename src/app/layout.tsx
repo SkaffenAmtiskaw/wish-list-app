@@ -1,5 +1,9 @@
-import { Grommet } from 'grommet';
+import { Box, Grid, Grommet } from 'grommet';
 import type { Metadata } from 'next';
+import { Quicksand } from 'next/font/google';
+
+import { Header, Sidebar } from '@/_components';
+import theme from '@/_theme';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -10,10 +14,29 @@ type Props = Readonly<{
   children: React.ReactNode;
 }>;
 
+const quicksand = Quicksand({
+  subsets: ['latin'],
+});
+
 const Layout = ({ children }: Props) => (
-  <html lang="en">
+  <html lang="en" className={quicksand.className}>
     <body>
-      <Grommet full>{children}</Grommet>
+      <Grommet full theme={theme}>
+        <Grid
+          rows={['auto', 'flex']}
+          columns={['xsmall', 'flex']}
+          fill
+          areas={[
+            { name: 'header', start: [0, 0], end: [1, 0] },
+            { name: 'sidebar', start: [0, 1], end: [0, 1] },
+            { name: 'main', start: [1, 1], end: [1, 1] },
+          ]}
+        >
+          <Header />
+          <Sidebar />
+          <Box gridArea="main">{children}</Box>
+        </Grid>
+      </Grommet>
     </body>
   </html>
 );
