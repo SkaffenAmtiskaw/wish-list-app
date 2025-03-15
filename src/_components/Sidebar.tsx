@@ -1,7 +1,18 @@
-import { Sidebar as StyledSidebar } from 'grommet';
+import Paper from '@mui/material/Paper';
 
-export const Sidebar = () => (
-  <StyledSidebar background="secondary" gridArea="sidebar">
-    FOO
-  </StyledSidebar>
+import { SIDEBAR_WIDTH } from '@/constants';
+
+type Props = {
+  children: React.ReactNode;
+};
+
+export const Sidebar = ({ children }: Props) => (
+  <Paper
+    elevation={1}
+    sx={{
+      width: SIDEBAR_WIDTH,
+    }}
+  >
+    {children}
+  </Paper>
 );

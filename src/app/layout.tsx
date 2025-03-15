@@ -1,14 +1,12 @@
-import { Box, Grid, Grommet } from 'grommet';
+import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
+import Box from '@mui/material/Box';
+import CssBaseline from '@mui/material/CssBaseline';
+import Stack from '@mui/material/Stack';
+
 import type { Metadata } from 'next';
 import { Quicksand } from 'next/font/google';
 
-import { Header, Sidebar, StyledComponentsRegistry } from '@/_components';
-import theme from '@/_theme';
-
-// https://docs.fontawesome.com/web/use-with/react/use-with
-import { config } from '@fortawesome/fontawesome-svg-core';
-import '@fortawesome/fontawesome-svg-core/styles.css';
-config.autoAddCss = false;
+import { Header, Sidebar } from '@/_components';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -26,24 +24,14 @@ const quicksand = Quicksand({
 const Layout = ({ children }: Props) => (
   <html lang="en" className={quicksand.className}>
     <body>
-      <StyledComponentsRegistry>
-        <Grommet full theme={theme}>
-          <Grid
-            rows={['auto', 'flex']}
-            columns={['xsmall', 'flex']}
-            fill
-            areas={[
-              { name: 'header', start: [0, 0], end: [1, 0] },
-              { name: 'sidebar', start: [0, 1], end: [0, 1] },
-              { name: 'main', start: [1, 1], end: [1, 1] },
-            ]}
-          >
-            <Header />
-            <Sidebar />
-            <Box gridArea="main">{children}</Box>
-          </Grid>
-        </Grommet>
-      </StyledComponentsRegistry>
+      <AppRouterCacheProvider>
+        <CssBaseline />
+        <Header />
+        <Stack direction="row">
+          <Sidebar>FOO</Sidebar>
+          <Box>{children}</Box>
+        </Stack>
+      </AppRouterCacheProvider>
     </body>
   </html>
 );

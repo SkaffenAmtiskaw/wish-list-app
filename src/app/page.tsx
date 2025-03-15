@@ -1,4 +1,4 @@
-import { Button } from 'grommet';
+import Button from '@mui/material/Button';
 
 import { signIn, signOut } from '@/auth';
 

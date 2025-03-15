@@ -1,46 +1,31 @@
-import { Box, DropButton } from 'grommet';
-import Image from 'next/image';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleUser } from '@fortawesome/free-solid-svg-icons';
-import { auth } from '@/auth';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import StyledAvatar from '@mui/material/Avatar';
 
-const ALIGNMENT = {
-  right: 'right' as const,
-  bottom: 'top' as const,
-};
+import Image from 'next/image';
+
+import { auth } from '@/auth';
 
 export const Avatar = async () => {
   const session = await auth();
 
+  if (!session?.user) {
+    return (
+      <StyledAvatar sx={{ height: '48px', width: '48px' }}>
+        <AccountCircleIcon />
+      </StyledAvatar>
+    );
+  }
+
   return (
-    <DropButton
-      dropAlign={ALIGNMENT}
-      dropContent={<Box>FOO</Box>}
-      dropProps={{
-        margin: {
-          top: 'xsmall',
-        },
-      }}
-      icon={
-        session?.user ? (
-          <Image
-            alt={`${session.user.name} avatar}`}
-            fill
-            src={session.user.image as string}
-            style={{
-              borderRadius: '50%',
-            }}
-          />
-        ) : (
-          <FontAwesomeIcon
-            icon={faCircleUser}
-            style={{ height: '100%', opacity: 0.75 }}
-          />
-        )
-      }
-      margin="small"
-      plain
-      style={{ position: 'relative', height: '48px' }}
-    />
+    <StyledAvatar sx={{ height: '48px', width: '48px' }}>
+      <Image
+        alt={`${session.user.name} avatar}`}
+        fill
+        src={session.user.image as string}
+        style={{
+          borderRadius: '50%',
+        }}
+      />
+    </StyledAvatar>
   );
 };

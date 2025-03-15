@@ -1,24 +1,23 @@
-import { Header as StyledHeader, Heading, Skeleton } from 'grommet';
+import Skeleton from '@mui/material/Skeleton';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+
 import { Suspense } from 'react';
 
 import { Avatar } from './Avatar';
+import { Bar } from './Bar';
 
 export const Header = () => (
-  <StyledHeader background="main" gridArea="header">
-    <Heading margin="small" size="small">
-      Wish Lists
-    </Heading>
-    <Suspense
-      fallback={
-        <Skeleton
-          height="xxsmall"
-          margin="small"
-          round="full"
-          width="xxsmall"
-        />
-      }
-    >
-      <Avatar />
-    </Suspense>
-  </StyledHeader>
+  <Bar>
+    <Toolbar sx={{ justifyContent: 'space-between' }}>
+      <Typography component="h1" variant="h4">
+        Wish Lists
+      </Typography>
+      <Suspense
+        fallback={<Skeleton variant="circular" height={48} width={48} />}
+      >
+        <Avatar />
+      </Suspense>
+    </Toolbar>
+  </Bar>
 );

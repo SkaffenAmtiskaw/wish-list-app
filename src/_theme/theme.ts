@@ -1,21 +1,16 @@
-import {
-  BYZANTIUM,
-  GREEN_BLUE,
-  URANIAN_BLUE,
-  AZURE,
-  LILAC,
-} from '@/_theme/palette';
+import { createTheme } from '@mui/material/styles';
 
-const theme = {
-  global: {
-    colors: {
-      brand: BYZANTIUM,
+import { BYZANTIUM, GREEN_BLUE } from '@/_theme/palette';
+
+const theme = createTheme({
+  palette: {
+    primary: {
       main: GREEN_BLUE,
-      secondary: URANIAN_BLUE,
-      accent: LILAC,
-      background: AZURE,
+    },
+    secondary: {
+      main: BYZANTIUM,
     },
   },
-};
+});
 
 export default theme;
