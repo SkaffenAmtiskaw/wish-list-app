@@ -1,10 +1,10 @@
-'use client';
+'use client'
 
-import AppBar from '@mui/material/AppBar';
+import AppBar from '@mui/material/AppBar'
 
 type Props = {
-  children: React.ReactNode;
-};
+  children: React.ReactNode
+}
 
 export const Bar = ({ children }: Props) => (
   <AppBar
@@ -16,4 +16,4 @@ export const Bar = ({ children }: Props) => (
   >
     {children}
   </AppBar>
-);
+)

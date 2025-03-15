@@ -1,10 +1,10 @@
-import Paper from '@mui/material/Paper';
+import Paper from '@mui/material/Paper'
 
-import { SIDEBAR_WIDTH } from '@/constants';
+import { SIDEBAR_WIDTH } from '@/constants'
 
 type Props = {
-  children: React.ReactNode;
-};
+  children: React.ReactNode
+}
 
 export const Sidebar = ({ children }: Props) => (
   <Paper
@@ -15,4 +15,4 @@ export const Sidebar = ({ children }: Props) => (
   >
     {children}
   </Paper>
-);
+)

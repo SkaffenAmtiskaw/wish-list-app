@@ -1,19 +1,19 @@
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import StyledAvatar from '@mui/material/Avatar';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle'
+import StyledAvatar from '@mui/material/Avatar'
 
-import Image from 'next/image';
+import Image from 'next/image'
 
-import { auth } from '@/auth';
+import { auth } from '@/auth'
 
 export const Avatar = async () => {
-  const session = await auth();
+  const session = await auth()
 
   if (!session?.user) {
     return (
       <StyledAvatar sx={{ height: '48px', width: '48px' }}>
         <AccountCircleIcon />
       </StyledAvatar>
-    );
+    )
   }
 
   return (
@@ -27,5 +27,5 @@ export const Avatar = async () => {
         }}
       />
     </StyledAvatar>
-  );
-};
+  )
+}
