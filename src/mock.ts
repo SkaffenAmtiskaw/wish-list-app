@@ -33,6 +33,6 @@ const data = {
       items: [],
     },
   },
-}
+};
 
-export default data
+export default data;

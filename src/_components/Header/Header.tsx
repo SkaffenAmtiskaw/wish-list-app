@@ -1,11 +1,11 @@
-import Skeleton from '@mui/material/Skeleton'
-import Toolbar from '@mui/material/Toolbar'
-import Typography from '@mui/material/Typography'
+import Skeleton from '@mui/material/Skeleton';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
 
-import { Suspense } from 'react'
+import { Suspense } from 'react';
 
-import { Avatar } from './Avatar'
-import { Bar } from './Bar'
+import { Avatar } from './Avatar';
+import { Bar } from './Bar';
 
 export const Header = () => (
   <Bar>
@@ -20,4 +20,4 @@ export const Header = () => (
       </Suspense>
     </Toolbar>
   </Bar>
-)
+);

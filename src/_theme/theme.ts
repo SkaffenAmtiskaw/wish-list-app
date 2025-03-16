@@ -1,6 +1,6 @@
-import { createTheme } from '@mui/material/styles'
+import { createTheme } from '@mui/material/styles';
 
-import { BYZANTIUM, GREEN_BLUE } from '@/_theme/palette'
+import { BYZANTIUM, GREEN_BLUE } from '@/_theme/palette';
 
 const theme = createTheme({
   palette: {
@@ -11,6 +11,6 @@ const theme = createTheme({
       main: BYZANTIUM,
     },
   },
-})
+});
 
-export default theme
+export default theme;
