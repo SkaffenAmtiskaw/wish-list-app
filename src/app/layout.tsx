@@ -1,12 +1,11 @@
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
-import Stack from '@mui/material/Stack';
 
 import type { Metadata } from 'next';
 import { Quicksand } from 'next/font/google';
 
-import { Header, Sidebar } from '@/_components';
+import { Content, Header, Sidebar } from '@/_components';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -15,22 +14,24 @@ export const metadata: Metadata = {
 
 type Props = Readonly<{
   children: React.ReactNode;
+  modal: React.ReactNode;
 }>;
 
 const quicksand = Quicksand({
   subsets: ['latin'],
 });
 
-const Layout = ({ children }: Props) => (
+const Layout = ({ children, modal }: Props) => (
   <html lang="en" className={quicksand.className}>
-    <body>
+    <body style={{ height: '100vh', width: '100vw' }}>
       <AppRouterCacheProvider>
         <CssBaseline />
         <Header />
-        <Stack direction="row">
+        <Content>
           <Sidebar>FOO</Sidebar>
-          <Box>{children}</Box>
-        </Stack>
+          <Box sx={{ flexGrow: 1 }}>{children}</Box>
+        </Content>
+        {modal}
       </AppRouterCacheProvider>
     </body>
   </html>
