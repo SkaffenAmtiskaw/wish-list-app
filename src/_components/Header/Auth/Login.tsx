@@ -12,7 +12,7 @@ export const Login = () => {
   const pathname = usePathname();
 
   return (
-    <Button component={Link} href={`/login?url=${encodeURIComponent(pathname)}`} onClick={close}>
+    <Button component={Link} href={`/login?redirect=${encodeURIComponent(pathname)}`} onClick={close}>
       LOGIN
     </Button>
   );

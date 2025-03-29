@@ -12,8 +12,8 @@ export const Logout = () => {
   return (
     <Button
       onClick={async () => {
-        await logout();
         close();
+        await logout();
       }}
     >
       LOGOUT
