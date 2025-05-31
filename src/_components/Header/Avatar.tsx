@@ -20,11 +20,12 @@ export const Avatar = async () => {
     <StyledAvatar sx={{ height: '48px', width: '48px' }}>
       <Image
         alt={`${session.user.name} avatar}`}
-        fill
+        height={48}
         src={session.user.image as string}
         style={{
           borderRadius: '50%',
         }}
+        width={48}
       />
     </StyledAvatar>
   );

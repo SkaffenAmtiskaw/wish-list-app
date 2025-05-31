@@ -1,4 +1,4 @@
-import { providerMap, signIn } from '@/auth';
+import { SignIn } from '@/_components';
 
 type Props = {
   searchParams: Promise<{
@@ -6,16 +6,10 @@ type Props = {
   }>
 }
 
-export default async ({ searchParams }: Props) => {
+const Page = async ({ searchParams }: Props) => {
   const { redirect } = await searchParams;
 
-  return providerMap.map(({ Button, id }) =>(
-    <Button
-      onClick={async () => {
-        'use server';
+  return <SignIn redirect={redirect} />;
+}
 
-        await signIn(id, { redirectTo: decodeURIComponent(redirect) });
-      }}
-    />
-  ));
-};
+export default Page;

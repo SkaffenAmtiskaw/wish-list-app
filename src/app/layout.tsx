@@ -5,7 +5,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import type { Metadata } from 'next';
 import { Quicksand } from 'next/font/google';
 
-import { Content, Header, Sidebar } from '@/_components';
+import { Content, Directory, Header, Sidebar } from '@/_components';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -28,7 +28,9 @@ const Layout = ({ children, modal }: Props) => (
         <CssBaseline />
         <Header />
         <Content>
-          <Sidebar>FOO</Sidebar>
+          <Sidebar>
+            <Directory />
+          </Sidebar>
           <Box sx={{ flexGrow: 1 }}>{children}</Box>
         </Content>
         {modal}

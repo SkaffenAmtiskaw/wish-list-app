@@ -1,37 +1,49 @@
 const data = {
   users: {
-    'foo@example.com': {
-      name: 'Foo Example',
-      lists: ['foo-1', 'foo-2'],
-      bookmarks: ['bar-1', 'bar-2'],
+    'seadams1400@gmail.com': {
+      name: 'Sarah',
+      lists: ['sarah', 'austin', 'lydia'],
+      bookmarks: ['patrick', 'missy'],
     },
-    'bar@example.com': {
-      name: 'Bar Example',
-      lists: ['foo-1'],
-      bookmarks: ['foo-2'],
+    'arthurbarnhouse@gmail.com': {
+      name: 'Patrick',
+      lists: ['patrick', 'austin', 'lydia'],
+      bookmarks: ['sarah'],
     },
-    madams: {
-      lists: ['bar-1'],
-      bookmarks: ['foo-2', 'bar-2'],
+    'madams@gmail.com': {
+      name: 'Missy',
+      lists: ['missy'],
+      bookmarks: ['austin', 'lydia'],
     },
   },
   lists: {
-    'foo-1': {
-      name: 'Foo 1',
-      items: [],
+    'austin': {
+      name: 'Austin',
+      groups: [{
+        name: 'Books',
+        items: [{
+          img: '',
+          name: 'The BFG - Roald Dahl',
+          url: 'https://app.thestorygraph.com/books/12cda909-ad4a-4f38-b86a-81ee1c232533'
+        }]
+      }],
     },
-    'foo-2': {
-      name: 'Foo 2',
-      items: [],
+    'lydia': {
+      name: 'Lydia',
+      groups: [],
     },
-    'bar-1': {
-      name: 'Bar 1',
-      items: [],
+    'sarah': {
+      name: 'Sarah',
+      groups: [],
     },
-    'bar-2': {
-      name: 'Bar 2',
-      items: [],
+    'patrick': {
+      name: 'Patrick',
+      groups: [],
     },
+    'missy':{
+      name: 'Missy',
+      groups: [],
+    }
   },
 };
 

@@ -16,10 +16,7 @@ const icon = (
 );
 
 export const Google = ({ onClick }: Props) => (
-  <Button variant="outlined" onClick={onClick}>
-    <Stack direction="row" spacing={1}>
-      {icon}
-      <div>Sign In with Google</div>
-    </Stack>
+  <Button startIcon={icon} variant="outlined" onClick={onClick}>
+    Sign In with Google
   </Button>
 );
