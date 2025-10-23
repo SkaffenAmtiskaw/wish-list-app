@@ -1,5 +1,5 @@
-import { auth } from '@/auth';
 import { User } from '@/_models';
+import { auth } from '@/auth';
 
 export const getUser = async () => {
   const session = await auth();

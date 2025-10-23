@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 
 import { createList } from '@/_actions';
 
-export const Create = () => (
+export const CreateList = () => (
   <form action={createList}>
     <Typography>Create a List</Typography>
     <TextField name="name" label="Name" required />

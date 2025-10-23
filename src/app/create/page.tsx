@@ -1,3 +1,3 @@
-import { Create } from '@/_components';
+import { CreateList } from '@/_components';
 
-export default () => <Create />;
+export default () => <CreateList />;

@@ -17,33 +17,37 @@ const data = {
     },
   },
   lists: {
-    'austin': {
+    austin: {
       name: 'Austin',
-      groups: [{
-        name: 'Books',
-        items: [{
-          img: '',
-          name: 'The BFG - Roald Dahl',
-          url: 'https://app.thestorygraph.com/books/12cda909-ad4a-4f38-b86a-81ee1c232533'
-        }]
-      }],
+      groups: [
+        {
+          name: 'Books',
+          items: [
+            {
+              img: '',
+              name: 'The BFG - Roald Dahl',
+              url: 'https://app.thestorygraph.com/books/12cda909-ad4a-4f38-b86a-81ee1c232533',
+            },
+          ],
+        },
+      ],
     },
-    'lydia': {
+    lydia: {
       name: 'Lydia',
       groups: [],
     },
-    'sarah': {
+    sarah: {
       name: 'Sarah',
       groups: [],
     },
-    'patrick': {
+    patrick: {
       name: 'Patrick',
       groups: [],
     },
-    'missy':{
+    missy: {
       name: 'Missy',
       groups: [],
-    }
+    },
   },
 };
 

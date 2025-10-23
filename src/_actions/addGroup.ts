@@ -2,6 +2,7 @@
 
 import { List } from '@/_models';
 
+import { redirect } from "next/navigation";
 import { revalidatePath } from 'next/cache';
 
 export const addGroup = async (data: FormData) => {
@@ -18,6 +19,6 @@ export const addGroup = async (data: FormData) => {
 
   await list.save();
 
-  // TODO: Ideally this would be more granular.
-  revalidatePath('/list/[id]');
+  revalidatePath(`/list/${id}`);
+  redirect(`/list/${id}`);
 };

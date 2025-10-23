@@ -1,8 +1,9 @@
-import { Schema, model, models, Types } from 'mongoose';
+import { Schema, Types, model, models } from 'mongoose';
 import type { Model } from 'mongoose';
 
 type Item = {
   name: string;
+  description?: string;
   url?: string;
   img?: string;
 };
@@ -12,7 +13,7 @@ type Group = {
   items: Types.DocumentArray<Item>;
 };
 
-type ListInterface = {
+export type ListInterface = {
   name: string;
   img?: string;
   groups: Types.DocumentArray<Group>;

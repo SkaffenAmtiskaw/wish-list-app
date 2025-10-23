@@ -1,3 +1,5 @@
+'use server';
+
 import { getUser } from '@/_utils';
 
 export const isListOwner = async (id: string): Promise<boolean> => {

@@ -11,4 +11,6 @@ export const bookmarkList = async (id: string) => {
   user.bookmarks.push(new Types.ObjectId(id));
 
   await user.save();
+
+  // TODO: Check if this needs revalidatePath
 };

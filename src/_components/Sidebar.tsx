@@ -14,6 +14,7 @@ export const Sidebar = ({ children }: Props) => {
 
   return (
     <Paper
+      component="aside"
       elevation={1}
       square
       sx={{
