@@ -2,11 +2,7 @@
 
 import { Modal } from '@/_components/Modal';
 
-type Props = {
-  children: React.ReactElement;
-};
-
-const Layout = ({ children }: Props) => (
+const Layout = ({ children }: Omit<LayoutProps<'/'>, 'modal'>) => (
   <Modal>
     {children}
   </Modal>

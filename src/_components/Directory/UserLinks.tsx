@@ -1,5 +1,4 @@
 import type { User as AuthUser } from 'next-auth';
-import Link from 'next/link';
 
 import AddIcon from '@mui/icons-material/Add';
 import Button from '@mui/material/Button';
@@ -21,7 +20,6 @@ export const UserLinks = async ({ user: authUser }: Props) => {
   return (
     <Stack>
       <Button
-        component={Link}
         href="/create"
         startIcon={<AddIcon />}
         variant="outlined"
