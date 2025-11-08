@@ -11,7 +11,7 @@ type Props = {
 const OPERATIONS = {
   create: addGroup,
   edit: () => {},
-}
+};
 
 export const GroupForm = ({ list, operation }: Props) => {
   const action = OPERATIONS[operation];
@@ -23,4 +23,4 @@ export const GroupForm = ({ list, operation }: Props) => {
       <Button type="submit">Add Group</Button>
     </form>
   );
-}
+};

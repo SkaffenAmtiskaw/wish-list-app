@@ -9,7 +9,7 @@ import { Close } from './Close';
 
 type Props = {
   children: React.ReactNode;
-}
+};
 
 export const Modal = ({ children }: Props) => {
   const router = useRouter();

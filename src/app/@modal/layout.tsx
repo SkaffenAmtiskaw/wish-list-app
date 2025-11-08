@@ -3,9 +3,7 @@
 import { Modal } from '@/_components/Modal';
 
 const Layout = ({ children }: Omit<LayoutProps<'/'>, 'modal'>) => (
-  <Modal>
-    {children}
-  </Modal>
+  <Modal>{children}</Modal>
 );
 
 export default Layout;

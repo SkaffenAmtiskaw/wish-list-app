@@ -1,4 +1,4 @@
-import { ItemForm, GroupForm } from "@/_components";
+import { GroupForm, ItemForm } from '@/_components';
 
 export type ModalProps = {
   id?: string;
@@ -7,14 +7,17 @@ export type ModalProps = {
   type: 'item' | 'group';
 };
 
-type ComponentProps = Pick<ModalProps, 'operation' | 'list' | 'id'>
+type ComponentProps = Pick<ModalProps, 'operation' | 'list' | 'id'>;
 
-const FORMS: Record<ModalProps['type'], React.FunctionComponent<ComponentProps>> = {
+const FORMS: Record<
+  ModalProps['type'],
+  React.FunctionComponent<ComponentProps>
+> = {
   item: ItemForm,
   group: GroupForm,
 };
 
-export const ModalContent = ({ type, ...props  }: ModalProps) => {
+export const ModalContent = ({ type, ...props }: ModalProps) => {
   const Component = FORMS[type];
 
   return <Component {...props} />;

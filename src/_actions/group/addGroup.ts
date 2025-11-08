@@ -2,8 +2,8 @@
 
 import { List } from '@/_models';
 
-import { redirect } from "next/navigation";
 import { revalidatePath } from 'next/cache';
+import { redirect } from 'next/navigation';
 
 export const addGroup = async (data: FormData) => {
   const id = data.get('list');

@@ -25,12 +25,18 @@ const Layout = async ({ children, params }: Props) => {
         <FAB
           actions={[
             {
-              query: new URLSearchParams({ type: 'item', operation: 'create' }).toString(),
+              query: new URLSearchParams({
+                type: 'item',
+                operation: 'create',
+              }).toString(),
               icon: <CardGiftcardIcon />,
               label: 'Add Item',
             },
             {
-              query: new URLSearchParams({ type: 'group', operation: 'create' }).toString(),
+              query: new URLSearchParams({
+                type: 'group',
+                operation: 'create',
+              }).toString(),
               icon: <CreateNewFolderIcon />,
               label: 'Add Group',
             },

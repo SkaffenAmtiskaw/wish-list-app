@@ -14,9 +14,9 @@ import type { ModalProps } from './_components/ModalContent';
 
 type Params = {
   id: string;
-}
+};
 
-type ModalParams = Pick<ModalProps, 'type' | 'operation'>
+type ModalParams = Pick<ModalProps, 'type' | 'operation'>;
 
 type SearchParams = {} | ModalParams;
 
@@ -30,7 +30,8 @@ const Page = async ({ params, searchParams }: Props) => {
 
   const query = await searchParams;
 
-  const isModalOpen = (q: SearchParams): q is ModalParams => q.hasOwnProperty('type');
+  const isModalOpen = (q: SearchParams): q is ModalParams =>
+    q.hasOwnProperty('type');
 
   const user = await getUser();
   const isAdmin = await isListOwner(id);
@@ -44,7 +45,11 @@ const Page = async ({ params, searchParams }: Props) => {
     <>
       {isModalOpen(query) && (
         <Modal>
-          <ModalContent list={id} operation={query.operation} type={query.type} />
+          <ModalContent
+            list={id}
+            operation={query.operation}
+            type={query.type}
+          />
         </Modal>
       )}
       <Stack padding={3}>
@@ -59,7 +64,7 @@ const Page = async ({ params, searchParams }: Props) => {
           {!!user && !isAdmin && <Bookmark disabled={isBookmarked} list={id} />}
           {isAdmin && <Invite list={id} />}
         </Stack>
-        <WishList list={list} />
+        <WishList isAdmin={isAdmin} list={list} />
       </Stack>
     </>
   );

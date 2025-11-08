@@ -19,11 +19,7 @@ export const UserLinks = async ({ user: authUser }: Props) => {
 
   return (
     <Stack>
-      <Button
-        href="/create"
-        startIcon={<AddIcon />}
-        variant="outlined"
-      >
+      <Button href="/create" startIcon={<AddIcon />} variant="outlined">
         Add New List
       </Button>
       {/* @ts-ignore */}

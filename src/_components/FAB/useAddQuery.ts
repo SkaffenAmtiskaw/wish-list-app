@@ -6,5 +6,5 @@ export const useAddQuery = () => {
 
   return (query: string) => {
     router.push(`${path}?${query}`);
-  }
-}
+  };
+};

@@ -9,8 +9,8 @@ const theme = createTheme({
     MuiButtonBase: {
       defaultProps: {
         LinkComponent: Link,
-      }
-    }
+      },
+    },
   },
   palette: {
     primary: {
